@@ -1,8 +1,33 @@
 {
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint", "react"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react/recommended"
+  ],
   "parserOptions": {
-    "sourceType": "module"
+    "ecmaVersion": 2022,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
   },
   "env": {
-    "es2022": true
+    "browser": true,
+    "es2022": true,
+    "node": true
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "rules": {
+    "@typescript-eslint/no-empty-function": "warn",
+    "@typescript-eslint/no-inferrable-types": "warn",
+    "react/react-in-jsx-scope": "off",
+    "@typescript-eslint/no-explicit-any": "warn",
+    "@typescript-eslint/no-unused-vars": "warn"
   }
 }

@@ -200,4 +200,9 @@ export class AudioAnalysis {
   }
 }
 
+// Полифилл для globalThis
+if (typeof globalThis === 'undefined') {
+  window.globalThis = window;
+}
+
 globalThis.AudioAnalysis = AudioAnalysis;

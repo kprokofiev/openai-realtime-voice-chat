@@ -110,4 +110,9 @@ export class WavPacker {
   }
 }
 
+// Полифилл для globalThis
+if (typeof globalThis === 'undefined') {
+  window.globalThis = window;
+}
+
 globalThis.WavPacker = WavPacker;
